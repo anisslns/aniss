@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+.scroller {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  /* Fade gradient */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    white 10%,
+    white 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    white 10%,
+    white 90%,
+    transparent 100%
+  );
+
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.scroller__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-block: 1rem;
+  white-space: nowrap;
+  width: max-content;
+
+  animation: scroll var(--speed, 40s) linear infinite;
+}
+
+/* Images */
+.scroller__inner img {
+  height: auto;
+  width: 50px;
+  object-fit: contain;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+/* Animation directions */
+.scroller[data-direction="right"] .scroller__inner {
+  animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] .scroller__inner {
+  animation-direction: normal;
+}
+
+/* Animation speeds */
+.scroller[data-speed="fast"] {
+  --speed: 20s;
+}
+.scroller[data-speed="normal"] {
+  --speed: 40s;
+}
+.scroller[data-speed="slow"] {
+  --speed: 60s;
+}
+
+/* Keyframes */
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ping-custom {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  70% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.animate-ping-custom {
+  animation: ping-custom 2s ease-out infinite;
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "title": "HelpScout +27 Language Translator",
+    "category": "Content Automation",
+    "year": "2025",
+    "href": "/projects/helpscout-workflow",
+    "isNew": true
+  },
+  {
+    "title": "YouTube outreach engine",
+    "category": "Lead generation",
+    "year": "2025",
+    "href": "/projects/youtube-workflow",
+    "isNew": true
+  },
+  {
+    "title": "Instagram outreach engine",
+    "category": "Lead generation",
+    "year": "2025",
+    "href": "/projects/instagram-workflow",
+    "isNew": false
+  },
+  {
+    "title": "TikTok outreach engine",
+    "category": "Lead generation",
+    "year": "2025",
+    "href": "/projects/tiktok-workflow",
+    "isNew": false
+  },
+  {
+    "title": "Website typo finder",
+    "category": "Web quality assurance",
+    "year": "2025",
+    "href": "/projects/website-typo-workflow",
+    "isNew": false
+  }
+]
