@@ -18,6 +18,8 @@ export default function ImageArea() {
       ? "/inf.webp"
       : pathname === "/projects/website-typo-workflow"
       ? "/tw.webp"
+      : pathname === "/projects/helpscout-workflow"
+      ? "/hs.png"
       : pathname === "/contact"
       ? "/email.webp"
       : "/n8n.png";
